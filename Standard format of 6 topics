@@ -1,1 +1,234 @@
+# Reusable Essay Prompt Template
 
+**Act as:** [Role, e.g., an experienced academic writer]
+
+**Task:** Write an essay about **[TOPIC]**.    
+
+**Purpose:** The essay should aim to **[inform / explain / argue / analyze / persuade]** the reader.
+
+**Target audience:** [Students / teachers / general readers / professionals]
+
+**Length:** Approximately [NUMBER] words.
+
+**Structure:**
+
+1. **Title** – Create a clear and relevant title.
+2. **Introduction** – Introduce the topic and explain its importance.
+3. **Main Body** – Include [NUMBER] well-organized paragraphs with explanations, examples, facts, or arguments.
+4. **Conclusion** – Summarize the main points and provide a final thought.
+
+**Writing style:** [Formal / academic / simple / persuasive]
+
+**Additional requirements:**
+
+* Use clear and simple language.
+* Maintain logical flow between paragraphs.
+* Avoid unnecessary repetition.
+* Include examples where appropriate.
+* Ensure the content is original, accurate, and grammatically correct.
+
+**Output:** Provide the essay with proper headings and paragraphs.
+
+# Reusable Email Prompt Template
+
+**Act as:** [Professional / student / manager / customer service representative]
+
+**Task:** Write an email to **[RECIPIENT OR ROLE]** regarding **[TOPIC OR PURPOSE]**.
+
+**Context:** [Briefly explain the situation].
+
+**Main message:** Include the following points:
+
+* [POINT 1]
+* [POINT 2]
+* [POINT 3]
+
+**Tone:** [Formal / professional / friendly / polite]
+
+**Requirements:**
+
+* Write a clear subject line.
+* Begin with an appropriate greeting.
+* Keep the message concise and organized.
+* Clearly explain the purpose of the email.
+* End with a polite closing and appropriate call to action.
+
+**Output format:**
+Subject:
+Greeting:
+Email Body:
+Closing:
+Name: [YOUR NAME]
+
+# Reusable Resume Prompt Template
+
+**Act as:** A professional resume writer and career advisor.
+
+**Task:** Create a professional resume for **[NAME]** applying for the position of **[JOB ROLE]**.
+
+**Personal Information:**
+
+* Name: [NAME]
+* Phone: [PHONE NUMBER]
+* Email: [EMAIL]
+* Location: [CITY/STATE]
+
+**Professional Summary:**
+Create a short and impactful summary based on the candidate's skills, education, and career goals.
+
+**Education:**
+
+* [DEGREE / COURSE]
+* [COLLEGE / SCHOOL]
+* [YEAR]
+* [GRADE / CGPA, if applicable]
+
+**Skills:**
+
+* [SKILL 1]
+* [SKILL 2]
+* [SKILL 3]
+
+**Projects or Experience:**
+For each project or experience, include:
+
+* Title/Role
+* Organization or Project Name
+* Duration
+* Key responsibilities or achievements
+
+**Additional Sections if relevant:**
+
+* Certifications
+* Achievements
+* Languages
+* Internships
+* Volunteer Experience
+
+**Requirements:**
+
+* Use a professional and ATS-friendly format.
+* Highlight relevant skills and achievements.
+* Use strong action verbs.
+* Keep the information clear and concise.
+* Do not invent qualifications or experience.
+
+**Output:** Create a complete, well-structured resume.
+
+# Reusable Letter Prompt Template
+
+**Act as:** [Student / professional / concerned citizen / employee]
+
+**Task:** Write a **[FORMAL / INFORMAL]** letter to **[RECIPIENT]** about **[TOPIC OR PURPOSE]**.
+
+**Background:** [Explain the situation].
+
+**Key points to include:**
+
+1. [POINT 1]
+2. [POINT 2]
+3. [POINT 3]
+
+**Tone:** [Respectful / formal / friendly / persuasive]
+
+**Structure:**
+
+* Sender's information
+* Date
+* Recipient's information, if required
+* Subject
+* Salutation
+* Introduction
+* Main content
+* Conclusion or request
+* Closing
+* Name
+
+**Requirements:**
+
+* Use appropriate language for the recipient.
+* Clearly communicate the purpose.
+* Maintain a logical structure.
+* Check grammar and spelling.
+
+**Output:** Write the complete letter in the correct format.
+
+# Reusable Story Prompt Template
+
+**Act as:** A creative and engaging story writer.
+
+**Task:** Write a **[GENRE]** story about **[MAIN IDEA OR TOPIC]**.
+
+**Main Character:**
+
+* Name: [NAME]
+* Age/Role: [DETAIL]
+* Personality: [TRAITS]
+
+**Setting:**
+
+* Place: [LOCATION]
+* Time: [TIME PERIOD]
+
+**Story Elements:**
+
+* Beginning: Introduce the character and setting.
+* Conflict: Present an interesting problem or challenge.
+* Development: Show how the character responds to the situation.
+* Climax: Create the most important or exciting moment.
+* Ending: Provide a meaningful, logical, or surprising conclusion.
+
+**Theme or message:** [LESSON / IDEA / MORAL]
+
+**Style:** [Simple / descriptive / emotional / suspenseful / humorous]
+
+**Length:** Approximately [NUMBER] words.
+
+**Requirements:**
+
+* Create an original and engaging story.
+* Use natural dialogue where appropriate.
+* Maintain consistency in characters and events.
+* Give the story a suitable title.
+
+**Output:** Write the complete story with a title.
+
+# Reusable Blog Prompt Template
+
+**Act as:** An expert content writer and blogger.
+
+**Task:** Write an engaging blog post about **[TOPIC]**.
+
+**Target audience:** [WHO WILL READ IT]
+
+**Purpose:** [Inform / educate / guide / entertain / persuade]
+
+**Main points to cover:**
+
+1. [POINT 1]
+2. [POINT 2]
+3. [POINT 3]
+4. [POINT 4]
+
+**Structure:**
+
+* **Catchy Title**
+* **Introduction:** Start with an engaging hook.
+* **Main Sections:** Explain each major point using clear headings.
+* **Examples or Practical Tips:** Include relevant examples where useful.
+* **Conclusion:** Summarize the main idea.
+* **Call to Action:** Encourage the reader to [ACTION].
+
+**Tone:** [Friendly / professional / educational / conversational]
+
+**Length:** Approximately [NUMBER] words.
+
+**Requirements:**
+
+* Use clear headings and subheadings.
+* Keep paragraphs short and easy to read.
+* Use examples where appropriate.
+* Avoid unnecessary repetition.
+* Make the content useful and engaging.
+
+**Output:** Provide a complete, well-formatted blog post.
