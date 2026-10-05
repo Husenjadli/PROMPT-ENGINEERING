@@ -1,0 +1,431 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Clone</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="left">
+    <button class="icon-btn">☰</button>
+    <div class="logo"><span class="play">▶</span><b>YouTube</b></div>
+  </div>
+
+  <div class="search-wrap">
+    <input id="search" type="text" placeholder="Search">
+    <button class="search-btn" onclick="searchVideos()">⌕</button>
+  </div>
+
+  <div class="actions">
+    <button class="icon-btn">🎙</button>
+    <button class="icon-btn">＋</button>
+    <button class="icon-btn">🔔</button>
+    <div class="avatar">H</div>
+  </div>
+</header>
+
+<div class="layout">
+
+<aside class="sidebar">
+  <a class="active">⌂ <span>Home</span></a>
+  <a>▶ <span>Shorts</span></a>
+  <a>▣ <span>Subscriptions</span></a>
+  <hr>
+  <h4>You</h4>
+  <a>◷ <span>History</span></a>
+  <a>▤ <span>Playlists</span></a>
+  <a>◉ <span>Your videos</span></a>
+  <a>♥ <span>Liked videos</span></a>
+  <hr>
+  <h4>Explore</h4>
+  <a>🔥 <span>Trending</span></a>
+  <a>🎵 <span>Music</span></a>
+  <a>🎬 <span>Movies</span></a>
+  <a>🏆 <span>Sports</span></a>
+</aside>
+
+<main>
+  <nav class="chips">
+    <button class="selected" onclick="filterVideos('All', this)">All</button>
+    <button onclick="filterVideos('Music', this)">Music</button>
+    <button onclick="filterVideos('Coding', this)">Coding</button>
+    <button onclick="filterVideos('Gaming', this)">Gaming</button>
+    <button onclick="filterVideos('Web Design', this)">Web Design</button>
+    <button onclick="filterVideos('News', this)">News</button>
+    <button onclick="filterVideos('Live', this)">Live</button>
+  </nav>
+
+  <section id="videoGrid" class="video-grid"></section>
+</main>
+
+</div>
+
+<script>
+const videos = [
+  {title:"Build a Modern Website From Scratch",channel:"Code Academy",views:"1.2M views",time:"2 days ago",duration:"18:42",cat:"Coding",color:"thumb1",avatar:"CA"},
+  {title:"Top 10 Songs You Should Listen To",channel:"Music Hub",views:"3.8M views",time:"1 week ago",duration:"12:15",cat:"Music",color:"thumb2",avatar:"MH"},
+  {title:"The Future of Web Design in 2026",channel:"Design Daily",views:"842K views",time:"3 days ago",duration:"9:31",cat:"Web Design",color:"thumb3",avatar:"DD"},
+  {title:"Epic Gaming Moments You Can't Miss",channel:"Game Zone",views:"2.1M views",time:"5 days ago",duration:"14:08",cat:"Gaming",color:"thumb4",avatar:"GZ"},
+  {title:"HTML & CSS Full Course for Beginners",channel:"Learn Web",views:"5.6M views",time:"2 weeks ago",duration:"1:04:22",cat:"Coding",color:"thumb5",avatar:"LW"},
+  {title:"Breaking News: Latest Updates",channel:"Daily News",views:"428K views",time:"1 hour ago",duration:"6:24",cat:"News",color:"thumb6",avatar:"DN"},
+  {title:"Lo-Fi Beats to Study and Relax",channel:"Chill Station",views:"11M views",time:"1 month ago",duration:"1:02:14",cat:"Music",color:"thumb7",avatar:"CS"},
+  {title:"LIVE: Developer Conference 2026",channel:"Tech Live",views:"12K watching",time:"Live now",duration:"LIVE",cat:"Live",color:"thumb8",avatar:"TL"},
+  {title:"Create a YouTube Clone with HTML & CSS",channel:"Frontend Pro",views:"976K views",time:"4 days ago",duration:"22:47",cat:"Web Design",color:"thumb9",avatar:"FP"}
+];
+
+function render(list) {
+  document.getElementById("videoGrid").innerHTML = list.map(v => `
+    <article class="card">
+      <div class="thumbnail ${v.color}">
+        <span class="duration">${v.duration}</span>
+        <span class="big-play">▶</span>
+      </div>
+      <div class="info">
+        <div class="channel-avatar">${v.avatar}</div>
+        <div>
+          <h3>${v.title}</h3>
+          <p>${v.channel} ✓</p>
+          <p>${v.views} • ${v.time}</p>
+        </div>
+        <button class="more">⋮</button>
+      </div>
+    </article>
+  `).join("");
+}
+
+function filterVideos(category, btn) {
+  document.querySelectorAll(".chips button").forEach(b => b.classList.remove("selected"));
+  btn.classList.add("selected");
+  render(category === "All" ? videos : videos.filter(v => v.cat === category));
+}
+
+function searchVideos() {
+  const q = document.getElementById("search").value.toLowerCase().trim();
+  render(q ? videos.filter(v =>
+    (v.title + " " + v.channel).toLowerCase().includes(q)
+  ) : videos);
+}
+
+document.getElementById("search").addEventListener("keydown", e => {
+  if (e.key === "Enter") searchVideos();
+});
+
+render(videos);
+</script>
+
+</body>
+</html>
+
+
+css code - 
+/* index.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+  color: #0f0f0f;
+}
+
+.topbar {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.left,
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon-btn {
+  border: 0;
+  background: transparent;
+  font-size: 21px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 21px;
+}
+
+.play {
+  background: #ff0000;
+  color: #fff;
+  border-radius: 7px;
+  font-size: 15px;
+  padding: 5px 7px;
+}
+
+.search-wrap {
+  width: min(620px, 48vw);
+  height: 42px;
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.search-wrap input {
+  flex: 1;
+  border: 0;
+  outline: 0;
+  padding: 0 18px;
+  font-size: 16px;
+}
+
+.search-btn {
+  width: 65px;
+  border: 0;
+  border-left: 1px solid #ddd;
+  background: #f8f8f8;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.avatar,
+.channel-avatar {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: white;
+  background: #6750a4;
+  font-weight: bold;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+}
+
+.layout {
+  display: flex;
+}
+
+.sidebar {
+  width: 220px;
+  min-height: calc(100vh - 64px);
+  padding: 16px 12px;
+  position: fixed;
+  left: 0;
+  top: 64px;
+  background: #fff;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 12px 15px;
+  margin-bottom: 3px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #222;
+  font-size: 14px;
+}
+
+.sidebar a:hover,
+.sidebar .active {
+  background: #f2f2f2;
+}
+
+.sidebar h4 {
+  padding: 12px 15px 6px;
+}
+
+.sidebar hr {
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin: 12px 0;
+}
+
+main {
+  width: calc(100% - 220px);
+  margin-left: 220px;
+  padding: 16px 24px 40px;
+}
+
+.chips {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  margin-bottom: 22px;
+}
+
+.chips button {
+  border: 0;
+  border-radius: 8px;
+  padding: 9px 15px;
+  background: #f2f2f2;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.chips button.selected {
+  background: #0f0f0f;
+  color: white;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(230px, 1fr));
+  gap: 34px 18px;
+}
+
+.card {
+  min-width: 0;
+}
+
+.thumbnail {
+  height: 190px;
+  border-radius: 10px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.thumbnail::before {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background: rgba(255,255,255,.14);
+}
+
+.big-play {
+  position: relative;
+  font-size: 42px;
+  color: white;
+}
+
+.thumb1 { background: linear-gradient(135deg,#161616,#ff3d00); }
+.thumb2 { background: linear-gradient(135deg,#6a1b9a,#e91e63); }
+.thumb3 { background: linear-gradient(135deg,#006064,#00acc1); }
+.thumb4 { background: linear-gradient(135deg,#1a237e,#651fff); }
+.thumb5 { background: linear-gradient(135deg,#e65100,#ffca28); }
+.thumb6 { background: linear-gradient(135deg,#263238,#607d8b); }
+.thumb7 { background: linear-gradient(135deg,#4527a0,#26a69a); }
+.thumb8 { background: linear-gradient(135deg,#b71c1c,#ff7043); }
+.thumb9 { background: linear-gradient(135deg,#283593,#29b6f6); }
+
+.duration {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  background: rgba(0,0,0,.85);
+  color: white;
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  z-index: 2;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 38px 1fr 20px;
+  gap: 10px;
+  margin-top: 11px;
+}
+
+.channel-avatar {
+  width: 36px;
+  height: 36px;
+  font-size: 11px;
+}
+
+.info h3 {
+  font-size: 15px;
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+
+.info p {
+  color: #606060;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.more {
+  border: 0;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .video-grid {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+  }
+
+  .sidebar {
+    width: 80px;
+  }
+
+  .sidebar span,
+  .sidebar h4 {
+    display: none;
+  }
+
+  .sidebar a {
+    justify-content: center;
+    padding: 14px 5px;
+    font-size: 20px;
+  }
+
+  main {
+    width: calc(100% - 80px);
+    margin-left: 80px;
+  }
+}
+
+@media (max-width: 650px) {
+  .topbar {
+    padding: 0 10px;
+  }
+
+  .logo b {
+    display: none;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  main {
+    width: 100%;
+    margin-left: 0;
+    padding: 12px;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .thumbnail {
+    height: 220px;
+  }
+}
